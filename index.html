@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ارتباط بر خط</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhYcex7WE1swjw2+DUyMEfAX0gloK7y9c6Q1B6x1Io4yxChEGjF3xLl95g2S9RZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/ffceab93af.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    
+    <div class="date-container">
+        <div class="dating">
+        <p class="date">تاریخ امروز : </p>
+         <p class="date" id="current-date"></p>
+        </div>
+    </div>
+    <div class="body">
+        <div class="logo"><img class="logo-img" src="images/logo.png" /></div>
+        <header id="header" class="header">
+            <nav>
+                <ul id="icon-list" class="icon-list">
+                    <!-- Page 1 Icons -->
+                    <li class="icon page-1">
+                        <a class="item" href="#"><i class="fa-solid fa-gift p1"><span>جوایز</span></i></a>
+                    </li>
+                    <li class="icon page-1">
+                        <a class="item" href="#"><i class="fa-solid fa-house p1"><span>خانه</span></i></a>
+                    </li>
+                    <li class="icon page-1">
+
+                        <a class="item" href="#"><i class="fa fa-cog p1"><span>تنظیمات</span></i></a>
+
+                    </li>
+                    <!-- Page 2 Icons -->
+                    <li class="icon page-2" id="icon4">
+                        <a class="item"  href="#"><i class="fa-solid fa-map p1"><span>آدرس</span></i></a>
+                    </li>
+                    <li class="icon page-2">
+                        <a class="item" href="#"><i class="fa-solid fa-heart p1"><span>قلب</span></i></a>
+                    </li>
+                    <li class="icon page-2">
+                        <a class="item" href="#"><i class="fa-solid fa-bell p1"><span>اعلان‌ها</span></i></a>
+                    </li>
+                    <li class="icon" id="menuIcon">
+                        <a class="item" href="#"><i class="fa-solid fa-bars p1"><span>منو</span></i></a>
+                    </li>
+                </ul>
+                <div id="popup4" class="popup4">
+                    <div class="popup-content4">
+                      <span class="close-button4">&times;</span>
+                      <div id="map"></div>
+                    </div>
+                  </div>
+            </nav>
+
+            <div class="left-button">
+                <button class="btnn" id="prev-button" onclick="showPage(1)"><i><img src="images/grid.png"
+                            alt=""></i></button>
+                <button class="btnn" id="next-button" onclick="showPage(2)"><i><img src="images/grid.png"
+                            alt=""></i></button>
+            </div>
+
+        </header>
+        <div class="under-header">
+            <div class="icon2-right">
+                <a href="#"><img class="right-img iconnn" id="iconnn" src="images/prof.png" alt="" /></a>
+                <p class="name">علی رضایی</p>
+            </div>
+            <div class="popup2" id="popup2">
+                <div class="profilee"><img class="in-right-img" src="images/prof.png" alt="" /><span>علی رضایی</span>
+                    <div><a href="#"><i class="fa-regular fa-pen-to-square in-right-image"></a></i>
+                        <a href="#"><i class="fa-solid fa-arrow-right-from-bracket in-right-image"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="left-icons">
+                <div class="icon2">
+                    <a href="#"><i class="fa-regular fa-paper-plane p2"></i></a>
+                </div>
+                    <!-- پاپ آپ صفحه چت -->
+
+                <div class="icon2">
+                    <a href="#"><i id="openChat" class="fa-solid fa-headset p2"></i></a>
+                </div>
+                <div class="icon2 iconn" id="iconn">
+                    <a href="#"><i class="fa-solid fa-question p2"></i></a>
+                </div>
+                <div class="popup" id="popup">میتونم کمکت کنم؟</div>
+            </div>
+        </div>
+        <div class="inner">
+            <section class="table_header">
+                <div class="input-group">
+                    <input type="search" id="searchInput" placeholder="جستجوی داده‌ها...">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass search"></i></a>
+                </div>
+            </section>
+            <section class="table__body">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>شناسه <span class="icon-arrow sspan"></span></th>
+                            <th>عنوان<span class="icon-arrow sspan"></span></th>
+                            <th>دسته بندی <span class="icon-arrow sspan"></span></th>
+                            <th>وضعیت <span class="icon-arrow sspan"></span></th>
+                            <th>عملیات<span class="icon-arrow sspan"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                ****
+                             </td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status cancelled">غیر فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status cancelled">غیر فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status delivered">فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>****</td>
+                            <td> **** </td>
+                            <td>
+                                <p class="status cancelled">غیر فعال</p>
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <a href="#"><i class="fa-solid fa-pencil iconx"></i></a><a href="#"><i class="fa-solid fa-trash-can iconx"></i></a><a href="#"><i class="fa-solid fa-lock iconx"></i></a><a href="#"><i class="fa-solid fa-lock-open iconx"></a></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn"><span class="close">&times;</span></a>
+        <div class="menu-logo">
+            <img class="img3" src="images/logo.png" alt="Logo" />
+        </div>
+        <a href="#" class="menu-item" data-content="Home Content"><i class="fa fa-home p1"><span> Home <i class="fa-solid fa-caret-down t1"></i></span></i></i></a>
+        <a href="#" class="menu-item" data-content="User Profile Content"><i
+                class="fa fa-user p1"><span>Profile <i class="fa-solid fa-caret-down t1"></i></span></i></a>
+        <a href="#" class="menu-item" data-content="Messages Content"><i
+                class="fa fa-envelope p1"><span>Messages <i class="fa-solid fa-caret-down t1"></i></span></i></a>
+        <a href="#" class="menu-item" data-content="Settings Content"><i class="fa fa-cog p1"><span>Settings <i class="fa-solid fa-caret-down t1"></i></span></i>
+        </a>
+        <a href="javascript:void(0)" class="back-btn" id="backBtn"><i
+                class="fa fa-arrow-left p1"><span>Back</span></i></a>
+        <div class="menu-content" id="menuContent">
+        </div>
+    </div>
+    <div id="chatPopup" class="popup5">
+        <section class="msger">
+            <button class="buttonclose" onclick="closeChat()">&times;</button>
+            <header class="msger-header">
+              <div class="msger-header-title">
+                <i class="fas fa-comment-alt "></i>پشتیبانی
+              </div>
+              <div class="msger-header-options">
+                <span><i class="fas fa-cog"></i></span>
+              </div>
+            </header>
+          
+            <main class="msger-chat">
+              <div class="msg left-msg">
+                <div
+                 class="msg-img"
+                ></div>
+          
+                <div class="msg-bubble">
+                  <div class="msg-info">
+                    <div class="msg-info-name">کارشناس</div>
+                    <div class="msg-info-time">12:45</div>
+                  </div>
+          
+                  <div class="msg-text">
+                    سلام چطور میتونم کمکتون کنم؟
+                  </div>
+                </div>
+              </div>
+          
+              <div class="msg right-msg">
+              </div>
+            </main>
+          
+            <form class="msger-inputarea">
+              <input type="text" class="msger-input" placeholder="سوال خود را بپرسید...">
+              <button type="submit" class="msger-send-btn">ارسال</button>
+            </form>
+          </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascripts/Js.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1180 @@
+@charset "UTF-8";
+@font-face {
+  font-family: IranYekanNormal;
+  src: url(fonts/IranYekanFaNum/IRANYekanWebDotinFaNum-Mediumd41d.eot)
+      format("eot"),
+    url(fonts/IranYekanFaNum/IRANYekanWebDotinFaNum.woff2) format("woff2"),
+    url(fonts/IranYekanFaNum/IRANYekanWebDotinFaNum-Black.woff) format("woff"),
+    url(fonts/IranYekanFaNum/IRANYekanWebDotinFaNum-Bold.ttf) format("truetype"),
+    url(fonts/IranYekanFaNum/IRANYekanWebDotinFaNum-Bold.svg) format("svg");
+}
+.table-header {
+  width: 100%;
+  height: 10%;
+  background-color: white;
+  padding: .8rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table{
+  width: 100%;
+  height: 100%;
+}
+.search{
+  color: #0a0c2c;
+}
+.search:hover{
+  color: #59c5c5;
+}
+.input-group {
+  font-size: 0.85rem;
+  width: 80%;
+  height: 100%;
+  background-color: #fff5;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+}
+
+.table_header .input-group:hover {
+  width: 95%;
+  background-color: #fff8;
+  box-shadow: 0 .1rem .4rem #0002;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.iconx {
+  color: #0a0c2c;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 5px;
+}
+.iconx:hover {
+  transform: scale(1.5);
+  color: #59c5c5;
+}
+.table_header .input-group img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.table_header .input-group input {
+  width: 100%;
+  padding: 0 .5rem 0 .3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.table__body {
+
+  width: 95%;
+  max-height: calc(89% - 1.6rem);
+  background-color: #fffb;
+  margin: .8rem auto;
+  border-radius: .6rem;
+  overflow: auto;
+  overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: .5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: right;
+  font-size: 0.85rem;
+  /* تغییر به راست‌چین */
+}
+
+thead th {
+  top: 0;
+  right: 0;
+  background-color: #d5d1defe;
+  cursor: pointer;
+  z-index: 0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr {
+  --delay: .1s;
+  transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  opacity: 0;
+  transform: translateX(-100%);
+  /* تغییر جهت به translateX(-100%) */
+}
+
+tbody tr:hover {
+  background-color: #fff6 !important;
+}
+
+tbody tr td i,
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+  transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p tbody tr.hide td i {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: .2s ease-in-out .5s;
+}
+
+.status {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.status.delivered {
+  background-color: #86e49d;
+  color: #006b21;
+}
+
+.status.cancelled {
+  background-color: #d893a3;
+  color: #b30021;
+}
+
+/* حذف وضعیت های pending و shipped */
+.status.delivered {
+  background-color: #86e49d;
+  color: #006b21;
+}
+
+
+thead th span.icon-arrow {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1.4px solid transparent;
+  text-align: center;
+  margin-right: .5rem;
+  /* تغییر به margin-right برای راست‌چین */
+  transition: .2s ease-in-out;
+}
+
+
+
+thead th.asc span.icon-arrow {
+  transform: rotate(180deg);
+}
+
+thead th.active,
+tbody td.active {
+  color: #005f5f;
+}
+
+
+
+.services{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  background-size: 130px 130px ;
+}
+.services-icon{
+  background-image: url(images/services.svg);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+
+}
+.sspan{
+  font-size: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.services :hover{
+  background-color: lightgray;
+  background-size: 22px 22px;
+}
+
+
+table{
+  width: 100%;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+
+
+
+.services :hover{
+  background-color: lightgray;
+  background-size: 22px 22px;
+}
+
+
+
+.popup5 {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  max-height: 30rem;
+  max-width: 30rem;
+
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "IranYekanNormal", Arial, sans-serif;
+  direction: rtl;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* اضافه کردن min-height */
+  background-image: url("/images/56249.jpg") ;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+
+}
+
+.body {
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 0rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* اضافه کردن ارتفاع کامل */
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.63);
+  backdrop-filter: blur(0.25px);
+  display: flex;
+  margin-top: 0rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  padding: 0.75rem;
+  font-size: 0.7rem; /* Adjusted font-size for responsiveness */
+  line-height: 0rem;
+  /* Prevents content from overflowing */
+}
+.logo-img {
+  width: 6rem; /* Slightly increased width for better visibility on smaller screens */
+  height: 6rem;
+}
+.right-img {
+  border-radius: 50%;
+  border: #0a0c2c solid 1px;
+  width: 3rem; /* Slightly increased width for better visibility on smaller screens */
+  height: 3rem;
+}
+.p1:hover {
+  color: #59c5c5;
+}
+
+.icon-list {
+  display: flex;
+}
+a {
+  text-decoration: none;
+  color: #0a0c2c;
+}
+.p1 {
+  font-size: 1rem;
+}
+span {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.t1{
+  margin-right: 0.25rem;
+}
+.p1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 0.5rem;
+  color: #0a0c2c;
+}
+span:hover {
+  color: #59c5c5;
+}
+.in-right-image:hover {
+  color: rgb(163, 2, 2);
+}
+.back-btn {
+  display: none; /* Initially hidden */
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  color: #f1f1f1;
+}
+.menu-content {
+  padding: 20px;
+  color: #0a0c2c;
+  display: none;
+}
+.btnn {
+  align-items: center;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.63);
+  backdrop-filter: blur(0.1px);
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #0a0c2c;
+  font-weight: bold;
+  cursor: pointer;
+  float: left;
+  font-family: "IranYekanNormal";
+  padding: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 1rem;
+}
+.dating{
+  display: flex;
+
+}
+.date{
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  color: white;
+}
+.date-container {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: block;
+  float: right;
+  line-height: 1.75;
+}
+
+.close {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #0a0c2c;
+  float: right;
+}
+.buttonclose {
+  width: 40px;
+  position: sticky;
+  top: 0;
+  color: rgb(163, 2, 2);
+  background-color: white
+}
+.popup {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  z-index: 100;
+  border-radius: 0px 10px 10px 10px;
+}
+
+:root {
+  --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --msger-bg: #fff;
+  --border: 2px solid #ddd;
+  --left-msg-bg: #ececec;
+  --right-msg-bg: #358896 ;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+.msger {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 25px 10px;
+  height: calc(100% - 50px);
+  border: var(--border);
+  border-radius: 5px;
+  background: var(--msger-bg);
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.msger-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: var(--border);
+  background: #eee;
+  color: #666;
+}
+
+.msger-chat {
+  flex: 1;
+  padding: 10px;
+}
+.msger-chat::-webkit-scrollbar {
+  width: 6px;
+}
+.msger-chat::-webkit-scrollbar-track {
+  background: #ddd;
+}
+.msger-chat::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+}
+.msg {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.msg:last-of-type {
+  margin: 0;
+}
+.msg-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  background: #ddd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+.msg-bubble {
+  max-width: 450px;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--left-msg-bg);
+}
+.msg-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.msg-info-name {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.msg-info-time {
+  font-size: 0.85em;
+}
+
+.left-msg .msg-bubble {
+  border-bottom-left-radius: 0;
+}
+
+.right-msg {
+  flex-direction: row-reverse;
+}
+.right-msg .msg-bubble {
+  background: var(--right-msg-bg);
+  color: #fff;
+  border-bottom-right-radius: 0;
+}
+.right-msg .msg-img {
+  margin: 0 0 0 10px;
+}
+
+.msger-inputarea {
+  display: flex;
+  padding: 10px;
+  border-top: var(--border);
+  background: #eee;
+}
+.msger-inputarea * {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
+}
+.msger-input {
+  flex: 1;
+  background: #ddd;
+}
+.msger-send-btn {
+  margin-left: 10px;
+  background: rgb(0, 196, 65);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.23s;
+}
+.msger-send-btn:hover {
+  background: rgb(0, 180, 50);
+}
+
+.msger-chat {
+  background-color: #fcfcfe;
+ 
+}
+
+.popup2 {
+  right: 7rem;
+  width: 7rem;
+  height: 8.5rem;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  z-index: 100;
+  border-radius: 10px 0px 10px 10px;
+}
+.profilee span {
+  font-size: 0.65rem;
+  color: #0a0c2c;
+}
+.back-btn {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+.profilee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.in-right-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem;
+  margin-top: 1rem;
+  color: #0a0c2c;
+}
+.in-right-img {
+  border: #0a0c2c 0.125rem dotted;
+  border-radius: 10px 10px 10px 10px;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.side-menu {
+  background-color: rgba(255, 255, 255, 0.63);
+  backdrop-filter: blur(9px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 3rem;
+  z-index: 1;
+  border: 1px black solid;
+}
+.menu-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.img3 {
+  width: 40%;
+  margin-bottom: 2.5rem;
+}
+.side-menu a {
+  margin: 0.5rem;
+  text-decoration: none;
+  font-size: 25px;
+  color: #0a0c2c;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  transition: 0.3s;
+}
+#map {
+  height: 90%;
+  width: 100%;
+
+}
+
+.popup4 {
+  display: none; /* در ابتدا مخفی است */
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding-top: 15rem;
+  width: 100%;
+  width: 25rem;
+  height: 25rem;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content4 {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  width: 25rem;
+  height: 25rem;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.close-button4 {
+  position: absolute;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.side-menu a:hover {
+  color: #59c5c5;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+button:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.icon-2 {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon2-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.name {
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  margin-right: 0.75rem;
+  color: #0a0c2c;
+  font-size: 0.8rem;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  border: #0a0c2c solid 1px;
+}
+.under-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 10.5vh;
+  background-color: #358896;
+  padding: 0.5rem;
+  box-shadow: 0 0.4rem 0.8rem #0005;
+}
+
+.left-icons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 8rem;
+}
+.left-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem; /* Slightly increased width for better visibility on smaller screens */
+  height: 1.25rem;
+  align-self: center; /* Centering the image vertically */
+}
+.p2:hover {
+  color: #59c5c5;
+}
+.p2 {
+  margin-left: auto; /* Move p2 to the left */
+  margin: 0.8rem; /* Added margin for spacing between images */
+  font-size: 1.25rem;
+}
+
+.inner {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+  .body {
+    height: 100vh; /* Make sure .body takes full height */
+    justify-content: space-between; /* Ensure elements take the full height */
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+  }
+
+  .inner{
+    order: 2;
+    border-radius: 0 0 0 0;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    border: solid gray 1px;
+    font-size: 0.7rem;
+}
+  table{
+    font-size: 0.7rem;
+}
+  .logo-img {
+    width: 3.5rem; /* Slightly increased width for better visibility on smaller screens */
+    height: 3.5rem;
+  }
+  .header {
+    order: 3; /* Header should come after under-header */
+    margin-top: auto; /* Move header to the bottom */
+    font-size: 0.625rem;
+    padding: 0.5rem;
+    border-radius: 0 0 0 0;
+    border: solid gray 0.5px;
+    z-index: 5;
+  }
+  .logo {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .under-header {
+    border-radius: 10px 10px 0 0;
+    order: 1; /* under-header should come before header */
+    margin-bottom: auto; /* Move under-header to the top */
+    margin-top: 0rem;
+    height: 8vh;
+  }
+
+  .icon {
+    width: 6rem;
+    height: 2.5rem;
+  }
+
+  .img {
+    width: 1.5rem; /* Increased width for better visibility */
+    height: 1.5rem;
+  }
+
+
+  .popup2 {
+    right: 1.75rem;
+  }
+  .popup {
+    left: 1.75rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+  .side-menu {
+    height: 93vh;
+  }
+  .img3 {
+    width: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .body {
+    height: 100vh; /* Make sure .body takes full height */
+    justify-content: space-between; /* Ensure elements take the full height */
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+  }
+  .logo-img {
+    width: 3.5rem; /* Slightly increased width for better visibility on smaller screens */
+    height: 3.5rem;
+  }
+  .inner{
+    order: 2;
+    height: 100%;
+    border-radius: 0 0 0 0;
+    padding: 0;
+    margin: 0;
+    border: solid gray 1px;
+    font-size: 0.7rem;
+}
+  table{
+    font-size: 0.7rem;
+}
+  .logo {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .header {
+    order: 3; /* Header should come after under-header */
+    margin-top: auto; /* Move header to the bottom */
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0 0 0 0;
+    border: solid gray 0.5px;
+    z-index: 5;
+  }
+
+  .under-header {
+    border-radius: 10px 10px 0 0;
+    order: 1; /* under-header should come before header */
+    margin-bottom: auto; /* Move under-header to the top */
+    margin-top: 0rem;
+    height: 8vh;
+  }
+
+  .icon {
+    width: 5rem;
+    height: 2rem;
+  }
+
+  .img {
+    width: 1.5rem; /* Increased width for better visibility */
+    height: 1.5rem;
+  }
+
+  .popup2 {
+    right: 1.75rem;
+  }
+  .popup {
+    left: 1.75rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+  .side-menu {
+    height: 93vh;
+  }
+  .img3 {
+    width: 25%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .body {
+    height: 100vh; /* Make sure .body takes full height */
+    justify-content: space-between; /* Ensure elements take the full height */
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+  }
+
+  .logo-img {
+    width: 3.5rem; /* Slightly increased width for better visibility on smaller screens */
+    height: 3.5rem;
+  }
+  .inner{
+    order: 2;
+    height: 100%;
+    border-radius: 0 0 0 0;
+    padding: 0;
+    margin: 0;
+    border: solid gray 1px;
+    font-size: 0.7rem;
+}
+  table{
+    font-size: 0.7rem;
+}
+
+  .header {
+    order: 3; /* Header should come after under-header */
+    margin-top: auto; /* Move header to the bottom */
+    font-size: 0.45rem;
+    padding: 0.4rem;
+    border-radius: 0 0 0 0;
+    border: solid gray 0.5px;
+    border-radius: 0;
+    z-index: 5;
+  }
+  .logo {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .under-header {
+    border-radius: 10px 10px 0 0;
+    order: 1; /* under-header should come before header */
+    margin-bottom: auto; /* Move under-header to the top */
+    margin-top: 0rem;
+    height: 8vh;
+  }
+
+  .icon {
+    width: 4rem;
+    height: 1.75rem;
+  }
+
+  .img {
+    width: 1.5rem; /* Increased width for better visibility */
+    height: 1.5rem;
+  }
+
+  .p2 {
+    font-size: 1.25rem;
+    margin: 0.25rem;
+  }
+  .popup2 {
+    right: 1.75rem;
+  }
+  .popup {
+    left: 1.75rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+  .side-menu {
+    height: 93.3vh;
+  }
+  .img3 {
+    width: 25%;
+  }
+  .popup4{
+    bottom : 0 ; 
+    width: 23rem;
+  }
+  .date{
+    font-size: 0.5rem;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .body {
+    height: 100vh; /* Make sure .body takes full height */
+    justify-content: space-between; /* Ensure elements take the full height */
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+  }
+  .logo {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .logo-img {
+    width: 3.5rem; /* Slightly increased width for better visibility on smaller screens */
+    height: 3.5rem;
+  }
+  .header {
+    order: 3; /* Header should come after under-header */
+    font-size: 0.4rem;
+    padding: 0.3rem;
+    border-radius: 0 0 0 0;
+    border: solid gray 0.5px;
+    z-index: 5;
+  }
+  .name {
+    font-size: 0.7rem;
+  }
+  .inner{
+    order: 2;
+    height: 100%;
+    border-radius: 0 0 0 0;
+    padding: 0;
+    margin: 0;
+    border: solid gray 1px;
+    font-size: 0.7rem;
+}
+table{
+  font-size: 0.7rem;
+}
+
+  .under-header {
+    border-radius: 10px 10px 0 0;
+    order: 1; /* under-header should come before header */
+    margin-bottom: auto; /* Move under-header to the top */
+    margin-top: 0rem;
+    height: 8vh;
+  }
+
+  .icon {
+    width: 3.5rem;
+    height: 1.5rem;
+  }
+
+  .img {
+    width: 1.5rem; /* Increased width for better visibility */
+    height: 1.5rem;
+  }
+
+  .p2 {
+    font-size: 1.25rem;
+    margin: 0.25rem;
+  }
+  .popup2 {
+    right: 1.75rem;
+  }
+  .popup {
+    left: 1.75rem;
+    font-size: 0.75rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+  .side-menu {
+    height: 93.5vh;
+  }
+  .img3 {
+    width: 25%;
+  }
+  .popup4{
+    bottom : 0 ; 
+    width: 18rem;
+  }
+  .date{
+    font-size: 0.5rem;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .icon {
+    max-width: 100%; /* تصاویر را به اندازه ماکزیمم ممکن کوچک کنید */
+    height: auto; /* ارتفاع به طور خودکار تنظیم شود */
+  }
+}
